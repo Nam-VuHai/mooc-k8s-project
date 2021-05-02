@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mooc-k8s-e1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uuid-generator
+  template:
+    metadata:
+      labels:
+        app: uuid-generator
+    spec:
+      containers:
+        - name: uuid-generator
+          image: jrbalrog9/mooc-k8s:e1.01

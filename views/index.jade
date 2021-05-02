@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  img(height='600px' src='https://picsum.photos/1200')
+  p Welcome to #{title}
+
+  form(action='/add' method='get')
+    input#todo-input(type='text' name='todo-input')
+    input#todo-submit(type='submit' value='Add')
+  ul#todo-list
+  each val in todoList
+    li= val
